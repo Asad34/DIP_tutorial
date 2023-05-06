@@ -11,7 +11,6 @@ num_rows = df.shape[0]
 df = df.drop(index=range(num_rows-1700099, num_rows))
 df.replace('nan', np.nan, inplace=True)
 df.dropna(axis=0, how='any', inplace=True)
-df.to_csv("a-current_situation_3.csv", index=False)
 
 days = df['CRASH DATE'].str.extract(r'(\d{1,2})/\d{1,2}/\d{4}')
 lat = df['LATITUDE'].astype(str).str.extract(r'\d{2}(\.\d{4})')
